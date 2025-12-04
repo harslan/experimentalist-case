@@ -87,6 +87,18 @@
             background: var(--amber);
         }
 
+        @media (max-width: 600px) {
+            .title-slide::before {
+                width: 6px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .title-slide::before {
+                width: 4px;
+            }
+        }
+
         .label-caps {
             font-size: clamp(0.45em, 1.3vw, 0.65em) !important;
             letter-spacing: 3px;
@@ -104,11 +116,18 @@
             margin-top: 12px;
         }
 
+        .title-footer {
+            font-size: clamp(0.6em, 1.5vw, 0.7em) !important;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+
         .divider {
             width: 80px;
             height: 3px;
             background: var(--amber);
-            margin: 15px 0;
+            margin: 20px auto;
             flex-shrink: 0;
         }
 
@@ -542,11 +561,37 @@
             }
 
             .label-caps {
-                font-size: 0.55em !important;
+                font-size: 0.6em !important;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
             }
 
             .subtitle {
-                font-size: 0.85em !important;
+                font-size: 0.9em !important;
+                margin-top: 10px;
+                line-height: 1.4;
+            }
+
+            /* Title slide specific mobile styles */
+            .title-slide {
+                padding: 20px 18px !important;
+            }
+
+            .title-slide h1 {
+                font-size: clamp(1.5em, 6vw, 2em) !important;
+                line-height: 1.25;
+                margin-bottom: 0.6em;
+            }
+
+            .title-slide .divider {
+                margin: 15px auto !important;
+                width: 60px;
+            }
+
+            .title-slide .title-footer {
+                font-size: 0.65em !important;
+                line-height: 1.4;
+                margin-top: 8px;
             }
 
             .slide-intro {
@@ -615,6 +660,42 @@
                 font-size: 0.8em !important;
             }
 
+            .label-caps {
+                font-size: 0.55em !important;
+                letter-spacing: 1.5px;
+            }
+
+            .subtitle {
+                font-size: 0.85em !important;
+            }
+
+            /* Title slide specific small mobile styles */
+            .title-slide {
+                padding: 18px 15px !important;
+            }
+
+            .title-slide h1 {
+                font-size: 1.4em !important;
+                line-height: 1.25;
+                margin-bottom: 0.5em;
+            }
+
+            .title-slide .subtitle {
+                font-size: 0.8em !important;
+                margin-top: 8px;
+            }
+
+            .title-slide .divider {
+                margin: 12px auto !important;
+                width: 50px;
+            }
+
+            .title-slide .title-footer {
+                font-size: 0.6em !important;
+                line-height: 1.4;
+                margin-top: 6px;
+            }
+
             .card-title {
                 font-size: 0.55em !important;
             }
@@ -666,8 +747,8 @@
                 <p class="subtitle">
                     Why Blocking Curriculum Innovation Is<br>Blocking Knowledge Creation
                 </p>
-                <div class="divider" style="margin: 20px auto;"></div>
-                <p style="font-size: 0.7em; color: rgba(255,255,255,0.6);">
+                <div class="divider"></div>
+                <p class="title-footer">
                     Sawyer Business School · Suffolk University · 2025
                 </p>
             </section>
