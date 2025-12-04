@@ -37,6 +37,8 @@
             flex-direction: column;
             overflow: hidden;
             justify-content: flex-start;
+            width: 100%;
+            max-width: 100%;
         }
 
         .reveal h1, .reveal h2, .reveal h3 {
@@ -70,6 +72,9 @@
             text-align: center;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         /* Title slide */
@@ -77,11 +82,20 @@
             background: linear-gradient(135deg, var(--scholarly-navy) 0%, var(--navy-dark) 100%) !important;
         }
 
+        .title-slide {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         .title-slide h1 {
             max-width: 100%;
+            width: 100%;
             word-wrap: break-word;
             overflow-wrap: break-word;
             hyphens: auto;
+            box-sizing: border-box;
+            padding: 0 4px;
         }
 
         .title-slide::before {
@@ -520,27 +534,39 @@
         /* Large phones (like Pixel 10L) - between 600px and 900px */
         @media (min-width: 601px) and (max-width: 900px) {
             .title-slide {
-                padding: 22px 20px !important;
+                padding: 20px 15px !important;
+                width: 100%;
+                max-width: 100%;
             }
 
             .title-slide h1 {
-                font-size: clamp(1.3em, 4vw, 1.6em) !important;
+                font-size: clamp(1.15em, 3.5vw, 1.45em) !important;
                 line-height: 1.2;
                 margin-bottom: 0.4em;
+                padding: 0 2px;
             }
 
             .title-slide .subtitle {
-                font-size: clamp(0.85em, 2vw, 0.95em) !important;
+                font-size: clamp(0.8em, 1.8vw, 0.9em) !important;
+                padding: 0 2px;
             }
 
             .title-slide .divider {
-                margin: 14px auto !important;
+                margin: 12px auto !important;
+            }
+
+            .title-slide .title-footer {
+                font-size: clamp(0.6em, 1.3vw, 0.65em) !important;
+                padding: 0 2px;
             }
         }
 
         @media (max-width: 900px) {
             .reveal .slides section {
-                padding: 20px 25px;
+                padding: 20px 20px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
             }
             
             .comparison-grid, .action-grid {
@@ -569,7 +595,10 @@
 
         @media (max-width: 600px) {
             .reveal .slides section {
-                padding: 18px 20px;
+                padding: 18px 15px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
             }
             
             .reveal h1 {
@@ -602,15 +631,31 @@
 
             /* Title slide specific mobile styles */
             .title-slide {
-                padding: 20px 18px !important;
+                padding: 18px 12px !important;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
             }
 
             .title-slide h1 {
-                font-size: clamp(1.25em, 4.5vw, 1.65em) !important;
+                font-size: clamp(1.1em, 3.8vw, 1.5em) !important;
                 line-height: 1.2;
                 margin-bottom: 0.4em;
                 max-width: 100%;
+                width: 100%;
                 word-wrap: break-word;
+                padding: 0 4px;
+                box-sizing: border-box;
+            }
+
+            .title-slide .subtitle {
+                padding: 0 4px;
+                box-sizing: border-box;
+            }
+
+            .title-slide .title-footer {
+                padding: 0 4px;
+                box-sizing: border-box;
             }
 
             .title-slide .divider {
@@ -673,7 +718,10 @@
 
         @media (max-width: 400px) {
             .reveal .slides section {
-                padding: 15px 16px;
+                padding: 15px 12px;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
             }
 
             .reveal h1 {
@@ -701,14 +749,30 @@
 
             /* Title slide specific small mobile styles */
             .title-slide {
-                padding: 18px 15px !important;
+                padding: 16px 10px !important;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
             }
 
             .title-slide h1 {
-                font-size: 1.3em !important;
+                font-size: 1.15em !important;
                 line-height: 1.2;
-                margin-bottom: 0.4em;
+                margin-bottom: 0.35em;
                 max-width: 100%;
+                width: 100%;
+                padding: 0 4px;
+                box-sizing: border-box;
+            }
+
+            .title-slide .subtitle {
+                padding: 0 4px;
+                box-sizing: border-box;
+            }
+
+            .title-slide .title-footer {
+                padding: 0 4px;
+                box-sizing: border-box;
             }
 
             .title-slide .subtitle {
