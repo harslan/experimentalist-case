@@ -605,28 +605,44 @@
 
         @media (max-width: 900px) {
             .reveal .slides section {
-                padding: 18px 18px;
+                padding: 16px 14px;
                 width: 100%;
                 max-width: 100%;
                 overflow-x: hidden;
+                overflow-y: visible;
+            }
+
+            .light-slide, .dark-slide, .very-dark-slide {
+                padding: 14px 12px !important;
             }
             
             .comparison-grid, .action-grid {
                 flex-direction: column;
-                gap: 10px;
-                flex: 1 1 auto;
+                gap: 8px;
+                flex: 0 1 auto;
                 min-height: 0;
+                margin-top: 8px;
             }
             
             .card, .action-card {
                 flex: 0 1 auto;
-                padding: 14px;
+                padding: 12px;
                 min-height: auto;
                 max-height: none;
             }
 
+            .comparison-grid {
+                max-height: calc(100vh - 140px);
+                overflow-y: visible;
+            }
+
             .light-slide .comparison-grid {
-                max-height: calc(100% - 70px);
+                max-height: calc(100vh - 120px);
+            }
+
+            .dark-slide .comparison-grid,
+            .very-dark-slide .comparison-grid {
+                max-height: calc(100vh - 160px);
             }
 
             .arrow-list {
@@ -634,84 +650,148 @@
                 max-height: none;
             }
 
+            .arrow-list li {
+                font-size: 0.65em !important;
+                line-height: 1.25;
+                margin: 3px 0;
+            }
+
             .light-slide .arrow-list li {
                 font-size: 0.6em !important;
-                line-height: 1.2;
-                margin: 2px 0;
             }
 
-            .light-slide .card {
-                padding: 10px;
+            .card-header {
+                margin-bottom: 6px;
             }
 
-            .light-slide .card-header {
-                margin-bottom: 5px;
+            .card-header-text {
+                font-size: 0.8em !important;
             }
 
-            .light-slide .card-header-text {
-                font-size: 0.75em !important;
+            .card-title {
+                font-size: 0.6em !important;
+                margin-bottom: 8px;
             }
 
-            .light-slide .icon-circle {
+            .card p {
+                font-size: 0.7em !important;
+                line-height: 1.35;
+            }
+
+            .icon-circle {
                 width: 20px;
                 height: 20px;
                 font-size: 0.75em;
             }
 
             .highlight-box {
-                padding: 14px;
+                padding: 12px;
+                margin: 10px 0;
+            }
+
+            .highlight-box p {
+                font-size: 0.8em !important;
+                line-height: 1.35;
+            }
+
+            .cta-box {
+                padding: 12px;
+                margin-top: 10px;
+            }
+
+            .cta-box p {
+                font-size: 0.75em !important;
+            }
+
+            .action-grid {
+                max-height: calc(100vh - 140px);
+            }
+
+            .action-card p {
+                font-size: 0.7em !important;
             }
 
             .reveal h1 {
-                font-size: clamp(1.2em, 4vw, 1.6em) !important;
+                font-size: clamp(1.1em, 3.8vw, 1.5em) !important;
+                margin-bottom: 0.35em;
             }
 
             .reveal h2 {
-                font-size: clamp(1.1em, 3.5vw, 1.5em) !important;
-                margin-bottom: 0.5em;
+                font-size: clamp(1.0em, 3.2vw, 1.4em) !important;
+                margin-bottom: 0.4em;
+            }
+
+            .slide-intro {
+                font-size: 0.8em !important;
+                margin-bottom: 8px;
+            }
+
+            .footnote {
+                font-size: 0.5em !important;
+                margin-top: 6px;
             }
         }
 
         @media (max-width: 600px) {
             .reveal .slides section {
-                padding: 14px 10px;
+                padding: 12px 8px;
                 width: 100%;
                 max-width: 100%;
                 overflow-x: hidden;
+                overflow-y: visible;
             }
 
-            .light-slide {
-                padding: 12px 8px !important;
+            .light-slide, .dark-slide, .very-dark-slide {
+                padding: 10px 6px !important;
             }
             
             .reveal h1 {
-                font-size: clamp(1.1em, 4vw, 1.5em) !important;
-                line-height: 1.2;
-                margin-bottom: 0.4em;
-            }
-
-            .reveal h2 {
-                font-size: clamp(0.95em, 3.2vw, 1.25em) !important;
-                line-height: 1.2;
-                margin-bottom: 0.35em;
-            }
-
-            .light-slide h2 {
+                font-size: clamp(1.0em, 3.5vw, 1.4em) !important;
+                line-height: 1.15;
                 margin-bottom: 0.3em;
             }
 
+            .reveal h2 {
+                font-size: clamp(0.9em, 3vw, 1.2em) !important;
+                line-height: 1.15;
+                margin-bottom: 0.3em;
+            }
+
+            .light-slide h2, .dark-slide h2 {
+                margin-bottom: 0.25em;
+            }
+
+            .slide-intro {
+                font-size: 0.75em !important;
+                margin-bottom: 6px;
+            }
+
             .comparison-grid, .action-grid {
-                gap: 8px;
-                margin-top: 8px;
+                gap: 6px;
+                margin-top: 6px;
+                flex: 0 1 auto;
             }
 
             .card, .action-card {
-                padding: 12px;
+                padding: 10px;
+                flex: 0 1 auto;
+            }
+
+            /* All comparison grids - ensure they fit */
+            .comparison-grid {
+                max-height: calc(100vh - 120px);
+                overflow-y: visible;
             }
 
             .light-slide .comparison-grid {
-                max-height: calc(100% - 50px);
+                max-height: calc(100vh - 100px);
                 gap: 5px;
+            }
+
+            .dark-slide .comparison-grid,
+            .very-dark-slide .comparison-grid {
+                max-height: calc(100vh - 140px);
+                gap: 6px;
             }
 
             .arrow-list {
@@ -719,39 +799,97 @@
                 max-height: none;
             }
 
+            .arrow-list li {
+                font-size: 0.6em !important;
+                line-height: 1.2;
+                margin: 2px 0;
+                gap: 4px;
+            }
+
             .light-slide .arrow-list li {
                 font-size: 0.55em !important;
                 line-height: 1.15;
                 margin: 1px 0;
-                gap: 4px;
             }
 
-            .light-slide .card {
-                padding: 8px;
+            .card-header {
+                margin-bottom: 5px;
             }
 
-            .light-slide .card-header {
-                margin-bottom: 4px;
-            }
-
-            .light-slide .card-header-text {
+            .card-header-text {
                 font-size: 0.7em !important;
             }
 
-            .light-slide .icon-circle {
+            .icon-circle {
                 width: 18px;
                 height: 18px;
                 font-size: 0.7em;
             }
 
-            .light-slide h2 {
-                font-size: 0.9em !important;
-                margin-bottom: 0.25em;
+            .card-title {
+                font-size: 0.55em !important;
+                margin-bottom: 6px;
             }
 
-            .light-slide .footnote {
+            .card p {
+                font-size: 0.65em !important;
+                line-height: 1.3;
+            }
+
+            .highlight-box {
+                padding: 10px;
+                margin: 8px 0;
+            }
+
+            .highlight-box p {
+                font-size: 0.75em !important;
+                line-height: 1.3;
+            }
+
+            .cta-box {
+                padding: 10px;
+                margin-top: 8px;
+            }
+
+            .cta-box p {
+                font-size: 0.7em !important;
+            }
+
+            .footnote {
                 font-size: 0.45em !important;
                 margin-top: 4px;
+            }
+
+            .action-grid {
+                max-height: calc(100vh - 120px);
+            }
+
+            .action-card p {
+                font-size: 0.65em !important;
+                line-height: 1.3;
+            }
+
+            .action-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.85em;
+            }
+
+            /* Center content slides */
+            .center-content h1 {
+                font-size: clamp(1.0em, 3.5vw, 1.3em) !important;
+            }
+
+            .center-content h2 {
+                font-size: clamp(0.9em, 3vw, 1.1em) !important;
+            }
+
+            .big-question {
+                font-size: 1.2em !important;
+            }
+
+            .big-47 {
+                font-size: 1.5em !important;
             }
 
             .footnote {
@@ -867,28 +1005,53 @@
 
         @media (max-width: 400px) {
             .reveal .slides section {
-                padding: 14px 10px;
+                padding: 10px 6px;
                 width: 100%;
                 max-width: 100%;
                 overflow-x: hidden;
+                overflow-y: visible;
+            }
+
+            .light-slide, .dark-slide, .very-dark-slide {
+                padding: 8px 5px !important;
+            }
+
+            .reveal h1 {
+                font-size: 0.95em !important;
+                margin-bottom: 0.25em;
             }
 
             .reveal h2 {
-                font-size: 0.95em !important;
-                margin-bottom: 0.35em;
+                font-size: 0.85em !important;
+                margin-bottom: 0.25em;
+            }
+
+            .slide-intro {
+                font-size: 0.7em !important;
+                margin-bottom: 4px;
             }
 
             .comparison-grid, .action-grid {
-                gap: 6px;
-                margin-top: 6px;
+                gap: 4px;
+                margin-top: 4px;
             }
 
             .card, .action-card {
-                padding: 10px;
+                padding: 8px;
+            }
+
+            .comparison-grid {
+                max-height: calc(100vh - 100px);
             }
 
             .light-slide .comparison-grid {
-                max-height: calc(100% - 45px);
+                max-height: calc(100vh - 85px);
+                gap: 4px;
+            }
+
+            .dark-slide .comparison-grid,
+            .very-dark-slide .comparison-grid {
+                max-height: calc(100vh - 120px);
                 gap: 4px;
             }
 
@@ -897,39 +1060,92 @@
                 max-height: none;
             }
 
-            .light-slide .arrow-list li {
-                font-size: 0.5em !important;
-                line-height: 1.1;
+            .arrow-list li {
+                font-size: 0.55em !important;
+                line-height: 1.15;
                 margin: 1px 0;
                 gap: 3px;
             }
 
-            .light-slide .card {
-                padding: 6px;
+            .light-slide .arrow-list li {
+                font-size: 0.5em !important;
+                line-height: 1.1;
             }
 
-            .light-slide .card-header {
-                margin-bottom: 3px;
+            .card-header {
+                margin-bottom: 4px;
             }
 
-            .light-slide .card-header-text {
+            .card-header-text {
                 font-size: 0.65em !important;
             }
 
-            .light-slide .icon-circle {
+            .icon-circle {
                 width: 16px;
                 height: 16px;
                 font-size: 0.65em;
             }
 
-            .light-slide h2 {
-                font-size: 0.85em !important;
-                margin-bottom: 0.2em;
+            .card-title {
+                font-size: 0.5em !important;
+                margin-bottom: 4px;
             }
 
-            .light-slide .footnote {
+            .card p {
+                font-size: 0.6em !important;
+            }
+
+            .highlight-box {
+                padding: 8px;
+                margin: 6px 0;
+            }
+
+            .highlight-box p {
+                font-size: 0.7em !important;
+            }
+
+            .cta-box {
+                padding: 8px;
+                margin-top: 6px;
+            }
+
+            .cta-box p {
+                font-size: 0.65em !important;
+            }
+
+            .footnote {
                 font-size: 0.4em !important;
                 margin-top: 3px;
+            }
+
+            .action-grid {
+                max-height: calc(100vh - 100px);
+            }
+
+            .action-card p {
+                font-size: 0.6em !important;
+            }
+
+            .action-number {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8em;
+            }
+
+            .center-content h1 {
+                font-size: 0.95em !important;
+            }
+
+            .center-content h2 {
+                font-size: 0.85em !important;
+            }
+
+            .big-question {
+                font-size: 1.1em !important;
+            }
+
+            .big-47 {
+                font-size: 1.3em !important;
             }
 
             .reveal h1 {
