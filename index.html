@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="A scholarly argument for curriculum innovation through experimentation at Sawyer Business School, Suffolk University">
+    <title>The Experimentalist's Case for Change</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
+    <style>
+        :root {
+            --scholarly-navy: #1a365d;
+            --navy-dark: #0f2744;
+            --teal: #0d9488;
+            --teal-light: #5eead4;
+            --amber: #d97706;
+            --amber-light: #fbbf24;
+            --surface: #fefdfb;
+            --red: #dc2626;
+            --green: #16a34a;
+        }
+
+        /* Base Reveal overrides */
+        .reveal {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal .slides section {
+            padding: 30px 50px;
+            box-sizing: border-box;
+            height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: flex-start;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            text-transform: none;
+            margin: 0 0 0.4em 0;
+        }
+
+        .reveal h1 {
+            font-size: clamp(1.4em, 4.5vw, 2.4em);
+            color: white;
+            line-height: 1.2;
+        }
+
+        .reveal h2 {
+            font-size: clamp(1.2em, 3.5vw, 1.7em);
+            color: var(--scholarly-navy);
+            line-height: 1.2;
+        }
+
+        .reveal p, .reveal li {
+            font-size: clamp(0.65em, 1.8vw, 0.95em);
+            line-height: 1.5;
+            margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .reveal .center-content {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Title slide */
+        .title-slide {
+            background: linear-gradient(135deg, var(--scholarly-navy) 0%, var(--navy-dark) 100%) !important;
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 8px;
+            height: 100%;
+            background: var(--amber);
+        }
+
+        .label-caps {
+            font-size: clamp(0.45em, 1.3vw, 0.65em) !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--amber);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            font-size: clamp(0.7em, 2.2vw, 1.1em) !important;
+            margin-top: 12px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: var(--amber);
+            margin: 15px 0;
+            flex-shrink: 0;
+        }
+
+        .divider-gradient {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--amber) 0%, var(--teal) 100%);
+            margin: 12px auto;
+            flex-shrink: 0;
+        }
+
+        /* Light background slides */
+        .light-slide {
+            background: var(--surface) !important;
+        }
+
+        .light-slide h2 {
+            color: var(--scholarly-navy);
+        }
+
+        .light-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--scholarly-navy);
+        }
+
+        /* Dark slides */
+        .dark-slide {
+            background: var(--scholarly-navy) !important;
+        }
+
+        .dark-slide h1, .dark-slide h2 {
+            color: white;
+        }
+
+        .very-dark-slide {
+            background: var(--navy-dark) !important;
+        }
+
+        /* Cards */
+        .comparison-grid {
+            display: flex;
+            gap: clamp(8px, 1.5vw, 20px);
+            margin-top: 12px;
+            align-items: stretch;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            max-height: 100%;
+        }
+
+        .card {
+            flex: 1;
+            padding: clamp(10px, 1.8vw, 20px);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-width: 0;
+        }
+
+        .card-theory {
+            background: #f8fafc;
+            border-left: 4px solid var(--amber);
+        }
+
+        .card-evidence {
+            background: #f0fdfa;
+            border-left: 4px solid var(--teal);
+        }
+
+        .card-teal {
+            background: rgba(13,148,136,0.2);
+            border-top: 3px solid var(--teal);
+            border-radius: 8px;
+        }
+
+        .card-amber {
+            background: rgba(217,119,6,0.2);
+            border-top: 3px solid var(--amber);
+            border-radius: 8px;
+        }
+
+        .card-white {
+            background: rgba(255,255,255,0.1);
+            border-top: 3px solid white;
+            border-radius: 8px;
+        }
+
+        .card-right {
+            background: linear-gradient(180deg, #f0fdfa 0%, #ccfbf1 100%);
+            border: 2px solid var(--teal);
+            border-radius: 8px;
+        }
+
+        .card-wrong {
+            background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+            border: 2px solid var(--amber);
+            border-radius: 8px;
+        }
+
+        .card-red {
+            background: #fef2f2;
+            border: 2px solid #fca5a5;
+            border-radius: 8px;
+        }
+
+        .card-green {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+            border-radius: 8px;
+        }
+
+        .card-dark {
+            background: rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: clamp(10px, 1.5vw, 18px);
+        }
+
+        .card-title {
+            font-size: clamp(0.5em, 1.3vw, 0.65em) !important;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+
+        .card-title.amber { color: var(--amber); }
+        .card-title.teal { color: var(--teal); }
+        .card-title.teal-light { color: var(--teal-light); }
+        .card-title.amber-light { color: var(--amber-light); }
+        .card-title.purple { color: #a78bfa; }
+        .card-title.red { color: var(--red); }
+        .card-title.green { color: var(--green); }
+
+        .arrow-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            min-height: 0;
+        }
+
+        .arrow-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin: 5px 0;
+            font-size: clamp(0.55em, 1.5vw, 0.8em) !important;
+            line-height: 1.3;
+        }
+
+        .arrow-list li::before {
+            content: '→';
+            color: var(--amber);
+            flex-shrink: 0;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            color: var(--teal);
+        }
+
+        .x-list li::before {
+            content: '✕';
+            color: var(--red);
+        }
+
+        .green-check li::before {
+            content: '✓';
+            color: var(--green);
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: rgba(255,255,255,0.1);
+            padding: clamp(10px, 1.8vw, 20px);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            margin: 12px 0;
+            flex-shrink: 0;
+        }
+
+        .highlight-box p {
+            font-size: clamp(0.7em, 2vw, 1.1em) !important;
+        }
+
+        .highlight-box.light {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: none;
+            border-left: 4px solid var(--scholarly-navy);
+            text-align: left;
+        }
+
+        .highlight-box.amber-left {
+            border-left: 4px solid var(--amber);
+            text-align: left;
+        }
+
+        .highlight-box.gradient {
+            background: linear-gradient(90deg, rgba(217,119,6,0.2) 0%, rgba(13,148,136,0.2) 100%);
+        }
+
+        .cta-box {
+            background: var(--scholarly-navy);
+            padding: clamp(10px, 1.5vw, 16px);
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+
+        .cta-box .amber {
+            color: var(--amber);
+            font-weight: 600;
+        }
+
+        /* Icons */
+        .icon-circle {
+            width: clamp(28px, 4vw, 40px);
+            height: clamp(28px, 4vw, 40px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(0.9em, 2vw, 1.3em);
+            color: white;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .icon-circle.teal { background: var(--teal); }
+        .icon-circle.amber { background: var(--amber); }
+
+        /* Action cards */
+        .action-grid {
+            display: flex;
+            gap: clamp(8px, 1.5vw, 16px);
+            margin: 12px 0;
+            flex: 1;
+            min-height: 0;
+            max-height: 100%;
+        }
+
+        .action-card {
+            flex: 1;
+            padding: clamp(10px, 1.5vw, 16px);
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .action-card.navy { background: var(--scholarly-navy); }
+        .action-card.teal { background: var(--teal); }
+        .action-card.amber { background: var(--amber); }
+
+        .action-number {
+            width: clamp(24px, 3.5vw, 36px);
+            height: clamp(24px, 3.5vw, 36px);
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(0.8em, 1.8vw, 1.1em);
+            font-weight: 700;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+
+        .action-card.navy .action-number { color: var(--scholarly-navy); background: var(--amber); }
+        .action-card.teal .action-number { color: var(--teal); }
+        .action-card.amber .action-number { color: var(--amber); }
+
+        .action-card p {
+            font-size: clamp(0.55em, 1.5vw, 0.8em) !important;
+        }
+
+        .action-card .bold {
+            font-size: clamp(0.65em, 1.7vw, 0.9em) !important;
+        }
+
+        /* Text colors */
+        .text-amber { color: var(--amber); }
+        .text-teal { color: var(--teal); }
+        .text-white { color: white; }
+        .text-muted { color: rgba(255,255,255,0.7); }
+        .text-dark { color: #1a1a1a; }
+        .text-gray { color: #475569; }
+
+        .font-serif { font-family: Georgia, serif; }
+        .italic { font-style: italic; }
+        .bold { font-weight: 600; }
+
+        /* Footer */
+        .footnote {
+            font-size: clamp(0.4em, 1vw, 0.55em) !important;
+            color: rgba(255,255,255,0.4);
+            margin-top: auto;
+            padding-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .footnote.dark {
+            color: #94a3b8;
+        }
+
+        /* Big number */
+        .big-47 {
+            font-family: Georgia, serif;
+            font-size: clamp(1.8em, 5vw, 2.8em);
+            font-weight: 700;
+            color: rgba(217,119,6,0.4);
+        }
+
+        /* Inner box */
+        .inner-box {
+            background: white;
+            padding: clamp(8px, 1.5vw, 16px);
+            border-radius: 6px;
+            border: 1px solid #99f6e4;
+            text-align: center;
+        }
+
+        /* Card header */
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .card-header-text {
+            font-size: clamp(0.85em, 2.2vw, 1.2em) !important;
+        }
+
+        /* Intro text */
+        .slide-intro {
+            font-size: clamp(0.7em, 1.9vw, 1em) !important;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        /* Ensure content fits within viewport */
+        /* Ensure sections can scroll if content overflows */
+        .reveal .slides section {
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .reveal .slides section::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 1200px) {
+            .reveal .slides section {
+                padding: 25px 40px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .reveal .slides section {
+                padding: 20px 30px;
+            }
+            
+            .comparison-grid, .action-grid {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .card, .action-card {
+                flex: none;
+                padding: 14px;
+            }
+
+            .highlight-box {
+                padding: 14px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .reveal .slides section {
+                padding: 15px 20px;
+            }
+            
+            .icon-circle {
+                width: 24px;
+                height: 24px;
+                font-size: 0.8em;
+            }
+
+            .divider, .divider-gradient {
+                width: 60px;
+                margin: 10px auto;
+            }
+
+            .card-title {
+                font-size: 0.5em !important;
+            }
+
+            .action-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .reveal .slides section {
+                padding: 12px 15px;
+            }
+
+            .reveal h1 {
+                font-size: 1.2em;
+            }
+
+            .reveal h2 {
+                font-size: 1em;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .reveal .slides section {
+                page-break-after: always;
+                overflow: visible;
+            }
+        }
+
+        /* Large question text */
+        .big-question {
+            font-size: clamp(1.3em, 4vw, 2.2em) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Title -->
+            <section class="title-slide center-content">
+                <p class="label-caps">A Scholarly Argument</p>
+                <h1>The Experimentalist's<br>Case for Change</h1>
+                <p class="subtitle">
+                    Why Blocking Curriculum Innovation Is<br>Blocking Knowledge Creation
+                </p>
+                <div class="divider" style="margin: 20px auto;"></div>
+                <p style="font-size: 0.7em; color: rgba(255,255,255,0.6);">
+                    Sawyer Business School · Suffolk University · 2025
+                </p>
+            </section>
+
+            <!-- Slide 2: Crossroads -->
+            <section class="light-slide">
+                <h2>We Stand at a Crossroads</h2>
+                <p class="font-serif slide-intro" style="color: #1a1a1a;">
+                    Every scholar should recognize this moment: the intersection of 
+                    <span class="text-amber bold">theory</span> and 
+                    <span class="text-teal bold">evidence</span>.
+                </p>
+                
+                <div class="comparison-grid">
+                    <div class="card card-theory">
+                        <p class="card-title amber">What Theory Suggests</p>
+                        <p class="text-gray" style="margin-bottom: 8px;">
+                            Compelling reasons to believe 47 credits with choose-one model will serve students better:
+                        </p>
+                        <ul class="arrow-list">
+                            <li>Competitive positioning research</li>
+                            <li>Advisory board feedback</li>
+                            <li>Student agency literature</li>
+                            <li>Retention research</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card card-evidence">
+                        <p class="card-title teal">What We Need</p>
+                        <p class="text-gray" style="margin-bottom: 10px;">
+                            But theory alone isn't how we operate, is it?
+                        </p>
+                        <div class="inner-box" style="margin-top: auto;">
+                            <p class="font-serif text-teal italic">
+                                Rigorous evidence from<br>controlled experimentation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="footnote dark">The question isn't whether to change. It's whether we're scholars willing to test our assumptions.</p>
+            </section>
+
+            <!-- Slide 3: Natural Experiment -->
+            <section class="dark-slide">
+                <p class="label-caps">The Core Proposition</p>
+                <h1>This Is a Natural Experiment</h1>
+                
+                <div class="highlight-box">
+                    <p class="font-serif" style="color: white;">
+                        This isn't a permanent, irreversible restructuring.<br>
+                        <span class="text-amber bold">This is the kind of study we teach our students to value.</span>
+                    </p>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="card card-teal">
+                        <p class="card-title teal-light">Publishable</p>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            Generates rigorous findings for peer-reviewed journals on business education
+                        </p>
+                    </div>
+                    <div class="card card-amber">
+                        <p class="card-title amber-light">Fundable</p>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            Positions Suffolk for federal grants, foundation funding, AACSB recognition
+                        </p>
+                    </div>
+                    <div class="card card-white">
+                        <p class="card-title" style="color: rgba(255,255,255,0.8);">Reversible</p>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            If results disappoint, we revert with data-informed confidence
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Either Way We Win -->
+            <section class="light-slide">
+                <h2>Either Way, We Win</h2>
+                
+                <div class="comparison-grid">
+                    <div class="card card-right">
+                        <div class="card-header">
+                            <div class="icon-circle teal">✓</div>
+                            <span class="font-serif text-teal bold card-header-text">If We're Right</span>
+                        </div>
+                        <ul class="arrow-list check-list">
+                            <li><span class="text-teal bold">Students benefit</span> immediately from increased flexibility</li>
+                            <li><span class="text-teal bold">We generate evidence</span> of what works in business ed</li>
+                            <li><span class="text-teal bold">Suffolk becomes</span> a thought leader in curriculum innovation</li>
+                            <li><span class="text-teal bold">Grants, publications,</span> and AACSB recognition follow</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card card-wrong">
+                        <div class="card-header">
+                            <div class="icon-circle amber">↺</div>
+                            <span class="font-serif text-amber bold card-header-text">If We're Wrong</span>
+                        </div>
+                        <ul class="arrow-list" style="color: #92400e;">
+                            <li><span class="text-amber bold">We learn</span> something valuable about curriculum design</li>
+                            <li><span class="text-amber bold">We document</span> why traditional models matter</li>
+                            <li><span class="text-amber bold">We publish that finding</span>—negative results are knowledge</li>
+                            <li><span class="text-amber bold">We revert</span> with data-informed confidence</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="footnote dark">Both outcomes advance knowledge. Only blocking the experiment advances nothing.</p>
+            </section>
+
+            <!-- Slide 5: Funding -->
+            <section class="very-dark-slide">
+                <p class="label-caps">Strategic Opportunity</p>
+                <h1>The Funding Landscape Favors Innovators</h1>
+                
+                <div class="highlight-box amber-left" style="background: rgba(255,255,255,0.05);">
+                    <p class="font-serif" style="color: rgba(255,255,255,0.95);">
+                        Evidence-based curriculum reform is <span class="text-amber bold">exactly what federal funders want to see</span>. The Department of Education, NSF, and foundations are hungry for rigorous studies of what actually works.
+                    </p>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="card card-dark">
+                        <p class="card-title teal-light">Dept. of Education</p>
+                        <p style="color: rgba(255,255,255,0.85);">
+                            FIPSE grants prioritize scalable innovations with measurable outcomes
+                        </p>
+                    </div>
+                    <div class="card card-dark">
+                        <p class="card-title amber-light">NSF</p>
+                        <p style="color: rgba(255,255,255,0.85);">
+                            IUSE grants fund curriculum experiments with rigorous assessment designs
+                        </p>
+                    </div>
+                    <div class="card card-dark">
+                        <p class="card-title purple">Foundations</p>
+                        <p style="color: rgba(255,255,255,0.85);">
+                            Lumina, Gates, and others seek student success innovations
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box gradient">
+                    <p class="font-serif" style="color: white;">
+                        <span class="bold">This change positions us to pursue funding</span> that would be <span class="text-amber">impossible</span> if we simply maintained the status quo without proof.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 6: To Colleagues -->
+            <section class="light-slide">
+                <h2>To Colleagues Who Hesitate</h2>
+                <p class="font-serif text-gray slide-intro">
+                    I understand the instinct to protect what works. But consider what blocking this experiment means:
+                </p>
+                
+                <div class="comparison-grid">
+                    <div class="card card-red">
+                        <p class="card-title red">Blocking the Experiment</p>
+                        <ul class="arrow-list x-list" style="color: #7f1d1d;">
+                            <li>Protecting <span class="bold">assumptions</span> over testing them</li>
+                            <li>Choosing <span class="bold">intuition</span> over inquiry</li>
+                            <li><span class="bold">Opposite</span> of what we ask students to do</li>
+                            <li>Foreclosing <span class="bold">grant opportunities</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card card-green">
+                        <p class="card-title green">Engaging as a Scholar</p>
+                        <ul class="arrow-list green-check" style="color: #14532d;">
+                            <li>Bring <span class="bold">critical eye</span> to evaluation design</li>
+                            <li>Help <span class="bold">define metrics</span> that matter</li>
+                            <li>Challenge assumptions <span class="bold">within study</span></li>
+                            <li>Become a <span class="bold">co-author</span> on findings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cta-box">
+                    <p class="font-serif italic">
+                        Don't be a barrier to knowledge creation. <span class="amber">Be a co-investigator.</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 7: The Question -->
+            <section class="dark-slide center-content">
+                <p class="label-caps">The Fundamental Question</p>
+                
+                <h1 style="margin-top: 15px;">
+                    Because the question isn't<br>
+                    <span style="color: rgba(255,255,255,0.5);">whether 47 is the right number.</span>
+                </h1>
+                
+                <div class="divider-gradient"></div>
+                
+                <h2 style="color: var(--teal); margin-top: 10px;">
+                    The question is:
+                </h2>
+                
+                <p class="font-serif text-amber big-question" style="font-weight: 700; margin-top: 10px;">
+                    Are we scholars, or aren't we?
+                </p>
+            </section>
+
+            <!-- Slide 8: The Invitation -->
+            <section class="light-slide">
+                <h2>The Invitation</h2>
+                
+                <div class="highlight-box light">
+                    <p class="font-serif" style="color: #1a1a1a;">
+                        I'm not asking you to agree that this will work.<br>
+                        <span class="text-teal bold">I'm asking you to help us find out.</span>
+                    </p>
+                </div>
+                
+                <div class="action-grid">
+                    <div class="action-card navy">
+                        <div class="action-number">1</div>
+                        <p class="bold" style="margin-bottom: 6px;">Embrace the Change</p>
+                        <p style="opacity: 0.9;">
+                            Support 47 credits as an experiment worth running, not a permanent decree
+                        </p>
+                    </div>
+                    <div class="action-card teal">
+                        <div class="action-number">2</div>
+                        <p class="bold" style="margin-bottom: 6px;">Evaluate with Critical Eyes</p>
+                        <p style="opacity: 0.9;">
+                            Help design metrics, challenge assumptions, demand rigor in assessment
+                        </p>
+                    </div>
+                    <div class="action-card amber">
+                        <div class="action-number">3</div>
+                        <p class="bold" style="margin-bottom: 6px;">Seize the Opportunity</p>
+                        <p style="opacity: 0.9;">
+                            Use this as a pathway to grants, publications, and thought leadership
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="font-serif italic text-gray" style="text-align: center;">
+                    The path from skeptic to co-investigator is shorter than you think.
+                </p>
+                
+                <p class="footnote dark">Your expertise makes the study stronger. Your opposition makes it impossible.</p>
+            </section>
+
+            <!-- Slide 9: Closing -->
+            <section class="dark-slide center-content">
+                <p class="label-caps">The Bottom Line</p>
+                
+                <h1 style="margin-top: 15px;">
+                    Scholars don't block experiments.
+                </h1>
+                
+                <h2 style="color: var(--teal); margin-top: 5px;">
+                    They design better ones.
+                </h2>
+                
+                <div class="divider" style="margin: 15px auto;"></div>
+                
+                <p class="font-serif italic text-muted" style="max-width: 700px;">
+                    Let's find out together what serves our students—and publish the answer.
+                </p>
+                
+                <p class="big-47" style="margin-top: 20px;">47</p>
+                
+                <p class="footnote" style="text-align: center;">
+                    Sawyer Business School · Suffolk University · 2025
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            width: '100%',
+            height: '100%',
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.5,
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            keyboard: true,
+            overview: true,
+            touch: true,
+            mobileView: true,
+            embedded: false,
+            autoAnimate: false,
+            autoSlide: 0,
+            loop: false,
+            rtl: false,
+            shuffle: false,
+            fragments: true,
+            fragmentInURL: false,
+            viewDistance: 3,
+            parallaxBackgroundImage: '',
+            parallaxBackgroundSize: '',
+            parallaxBackgroundRepeat: '',
+            parallaxBackgroundPosition: '',
+            parallaxBackgroundHorizontal: null,
+            parallaxBackgroundVertical: null
+        });
+    </script>
+</body>
+</html>
