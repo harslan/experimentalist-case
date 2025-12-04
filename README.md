@@ -30,7 +30,7 @@ Then navigate to `http://localhost:8000` in your browser.
 3. Navigate to "Pages" in the left sidebar
 4. Under "Source", select the branch (usually `main` or `master`)
 5. Click "Save"
-6. Your presentation will be available at `https://[your-username].github.io/power_of_experimentation/`
+6. Your presentation will be available at `https://harslan.github.io/experimentalist-case/`
 
 ## Navigation
 
